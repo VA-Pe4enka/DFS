@@ -66,41 +66,41 @@ func main() {
 		visited[i] = 0
 	}
 
-	//var edges int
-	//var parent, child int
-	//var graphType int
-	//fmt.Print("Enter number of edges ")
-	//fmt.Scanf("%d \n", &edges)
-	//fmt.Print("Choose graph type: 1 - oriented / 2 - unoriented")
-	//fmt.Scanf("%d \n", &graphType)
-	//switch graphType {
-	//case 1:
-	//	fmt.Print("You chose oriented graph")
-	//	for i := 0; i < edges; i++ {
-	//		fmt.Println("Add edge by entering parent and child ")
-	//		fmt.Print("Add parent ")
-	//		fmt.Scanf("%d \n", &parent)
-	//		fmt.Print("Add child ")
-	//		fmt.Scanf("%d \n", &child)
-	//		g.AddEdge(parent, child)
-	//	}
-	//
-	//case 2:
-	//	fmt.Print("You chose unoriented graph")
-	//	for i := 0; i < edges; i++ {
-	//		fmt.Println("Add edge by entering parent and child ")
-	//		fmt.Print("Add parent ")
-	//		fmt.Scanf("%d \n", &parent)
-	//		fmt.Print("Add child ")
-	//		fmt.Scanf("%d \n", &child)
-	//		g.AddReversEdge(parent, child)
-	//}
+	var edges int
+	var parent, child int
+	var graphType int
+	fmt.Print("Enter number of edges ")
+	fmt.Scanf("%d \n", &edges)
+	fmt.Print("Choose graph type: 1 - oriented / 2 - unoriented")
+	fmt.Scanf("%d \n", &graphType)
+	switch graphType {
+	case 1:
+		fmt.Print("You chose oriented graph")
+		for i := 0; i < edges; i++ {
+			fmt.Println("Add edge by entering parent and child ")
+			fmt.Print("Add parent ")
+			fmt.Scanf("%d \n", &parent)
+			fmt.Print("Add child ")
+			fmt.Scanf("%d \n", &child)
+			g.AddEdge(parent, child)
+		}
+	
+	case 2:
+		fmt.Print("You chose unoriented graph")
+		for i := 0; i < edges; i++ {
+			fmt.Println("Add edge by entering parent and child ")
+			fmt.Print("Add parent ")
+			fmt.Scanf("%d \n", &parent)
+			fmt.Print("Add child ")
+			fmt.Scanf("%d \n", &child)
+			g.AddReversEdge(parent, child)
+	}
 
-	g.AddEdge(1, 2)
-	g.AddEdge(1, 3)
-	g.AddEdge(3, 4)
-	g.AddEdge(3, 6)
-	g.AddEdge(4, 5)
+	// g.AddEdge(1, 2)
+	// g.AddEdge(1, 3)
+	// g.AddEdge(3, 4)
+	// g.AddEdge(3, 6)
+	// g.AddEdge(4, 5)
 
 	visitedNodes := g.DFS(1, visited)
 
